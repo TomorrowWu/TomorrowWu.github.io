@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 吴名</title>
-    <link>http://blog.lovecoding.club/tags/</link>
+    <link>tomorrowwu.github.io/tags/</link>
     <description>Recent content in Tags on 吴名</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 09 Nov 2018 18:08:09 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.lovecoding.club/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="tomorrowwu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo</title>
-      <link>http://blog.lovecoding.club/tags/hugo/</link>
+      <link>tomorrowwu.github.io/tags/hugo/</link>
       <pubDate>Fri, 09 Nov 2018 18:08:09 +0800</pubDate>
       
-      <guid>http://blog.lovecoding.club/tags/hugo/</guid>
+      <guid>tomorrowwu.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

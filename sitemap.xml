@@ -3,45 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://blog.lovecoding.club/posts/hello/</loc>
+    <loc>tomorrowwu.github.io/posts/hello/</loc>
     <lastmod>2018-11-09T18:08:09+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.lovecoding.club/archives/</loc>
+    <loc>tomorrowwu.github.io/archives/</loc>
   </url>
   
   <url>
-    <loc>http://blog.lovecoding.club/categories/</loc>
+    <loc>tomorrowwu.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.lovecoding.club/tags/hugo/</loc>
-    <lastmod>2018-11-09T18:08:09+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.lovecoding.club/posts/</loc>
+    <loc>tomorrowwu.github.io/tags/hugo/</loc>
     <lastmod>2018-11-09T18:08:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.lovecoding.club/tags/</loc>
+    <loc>tomorrowwu.github.io/posts/</loc>
     <lastmod>2018-11-09T18:08:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.lovecoding.club/</loc>
+    <loc>tomorrowwu.github.io/tags/</loc>
     <lastmod>2018-11-09T18:08:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.lovecoding.club/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</loc>
+    <loc>tomorrowwu.github.io/</loc>
+    <lastmod>2018-11-09T18:08:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>tomorrowwu.github.io/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</loc>
     <lastmod>2018-11-09T18:08:09+08:00</lastmod>
     <priority>0</priority>
   </url>
