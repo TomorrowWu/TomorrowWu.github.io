@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 吴名</title>
-    <link>/posts/</link>
+    <link>https://lovecoding.club/posts/</link>
     <description>Recent content in Posts on 吴名</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 09 Nov 2018 18:08:09 +0800</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lovecoding.club/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello</title>
-      <link>/posts/hello/</link>
+      <link>https://lovecoding.club/posts/hello/</link>
       <pubDate>Fri, 09 Nov 2018 18:08:09 +0800</pubDate>
       
-      <guid>/posts/hello/</guid>
+      <guid>https://lovecoding.club/posts/hello/</guid>
       <description></description>
     </item>
     
