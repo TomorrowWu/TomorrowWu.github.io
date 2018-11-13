@@ -12,12 +12,17 @@
     
     
     <item>
-      <title>Hello</title>
-      <link>https://lovecoding.club/2018/11/09/hello.html</link>
+      <title>leetcode.69.sqrtx.X的平方根</title>
+      <link>https://lovecoding.club/2018/11/13/leetcode.69.sqrtx.html</link>
       <pubDate>Fri, 09 Nov 2018 18:08:09 +0800</pubDate>
       
-      <guid>https://lovecoding.club/2018/11/09/hello.html</guid>
-      <description></description>
+      <guid>https://lovecoding.club/2018/11/13/leetcode.69.sqrtx.html</guid>
+      <description>题目描述 实现 int sqrt(int x) 函数。
+计算并返回 x 的平方根，其中 x 是非负整数。
+由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
+示例1:
+输入: 4 输出: 2  示例2:
+输入: 8 输出: 2 说明: 8 的平方根是 2.82842..., 由于返回类型是整数，小数部分将被舍去。  暴力版本 // 暴力解法 func mySqrt(x int) int { for i := 0; i &amp;lt;= x; i++ { res := i * i if res == x { return i } else if res &amp;gt; x { return i - 1 } } return -1 }  二分查找 //在有序数组中，找到最后一个小于等于给定值的数 func mySqrt2(x int) int { low, high := 0, x for low &amp;lt;= high { //防止大数相加溢出 //位运算更高效 mid := low + (high-low)&amp;gt;&amp;gt;1 product := mid * mid if product &amp;gt; x { high = mid - 1 } else { if (mid == x) || (mid+1)*(mid+1) &amp;gt; x { //遍历最后一个数 || 下一个数大于目标值 return mid } //下一个数小于等于目标值，所以mid不是最后一个数 low = mid + 1 } } return -1 }  二分查找思路  相当于从0-x中找到最后一个平方&amp;lt;=x的整数 我们求解的是最后一个小于等于给定值的元素，所以当 product&amp;lt;=x时，需要确认 mid+1 的平方&amp;gt;x 如果 mid+1 的平方 &amp;lt;= x ,说明mid肯定不是最后一个，更新low  GitHub  源码传送门 项目中会提供各种数据结构及算法的Golang实现, LeetCode解题思路及答案  参考资料 leetcode 69.</description>
     </item>
     
   </channel>

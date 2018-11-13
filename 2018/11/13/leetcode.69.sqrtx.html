@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.51" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>leetcode.69.sqrtx.X的平方根 | 编程的世界</title>
+    <meta property="og:title" content="leetcode.69.sqrtx.X的平方根 - 编程的世界">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-11-09T18:08:09&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-11-09T18:08:09&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,tomorrowwu,java,区块链,Node.js,博客,软件架构,公众号">
+    <meta name="description" content="leetcode.69.sqrtx.X的平方根">
+        
+    <meta name="author" content="吴名">
+    <meta property="og:url" content="https://lovecoding.club/2018/11/13/leetcode.69.sqrtx.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "true",
+        enable_page_level_ads: true
+    });
+    </script>
+    
+
+
+    
+    
+
+    
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129035030-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129035030-1');
+</script>
+
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://lovecoding.club">
+                        编程的世界
+                    </a>
+                
+                <p class="description">专注于Java、Go语言、区块链、Web开发、Node.js、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://lovecoding.club">首页</a>
+                    
+                    <a  href="https://lovecoding.club/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://lovecoding.club/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">leetcode.69.sqrtx.X的平方根</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年11月9日
+                        </date>
+                        
+                        <div class="post-meta meta-category">
+                            |
+                            
+                                <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E">数据结构与算法之美</a>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
+
+<h3 id="题目描述">题目描述</h3>
+
+<p>实现 int sqrt(int x) 函数。</p>
+
+<p>计算并返回 x 的平方根，其中 x 是非负整数。</p>
+
+<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+
+<p>示例1:</p>
+
+<pre><code>输入: 4
+输出: 2
+</code></pre>
+
+<p>示例2:</p>
+
+<pre><code>输入: 8
+输出: 2
+说明: 8 的平方根是 2.82842..., 
+     由于返回类型是整数，小数部分将被舍去。
+</code></pre>
+
+<h3 id="暴力版本">暴力版本</h3>
+
+<pre><code class="language-Golang">// 暴力解法
+func mySqrt(x int) int {
+	for i := 0; i &lt;= x; i++ {
+		res := i * i
+		if res == x {
+			return i
+		} else if res &gt; x {
+			return i - 1
+		}
+	}
+	return -1
+}
+</code></pre>
+
+<h3 id="二分查找">二分查找</h3>
+
+<pre><code class="language-Golang">//在有序数组中，找到最后一个小于等于给定值的数
+func mySqrt2(x int) int {
+	low, high := 0, x
+	for low &lt;= high {
+		//防止大数相加溢出
+		//位运算更高效
+		mid := low + (high-low)&gt;&gt;1
+		product := mid * mid
+		if product &gt; x {
+			high = mid - 1
+		} else {
+			if (mid == x) || (mid+1)*(mid+1) &gt; x {
+				//遍历最后一个数 || 下一个数大于目标值
+				return mid
+			}
+			//下一个数小于等于目标值，所以mid不是最后一个数
+			low = mid + 1
+		}
+	}
+	return -1
+}
+</code></pre>
+
+<h3 id="二分查找思路">二分查找思路</h3>
+
+<ul>
+<li>相当于从0-x中找到最后一个平方&lt;=x的整数</li>
+<li>我们求解的是最后一个小于等于给定值的元素，所以当 product&lt;=x时，需要确认 mid+1 的平方&gt;x</li>
+<li>如果 mid+1 的平方 &lt;= x ,说明mid肯定不是最后一个，更新low</li>
+</ul>
+
+<h3 id="github">GitHub</h3>
+
+<ul>
+<li><a href="https://github.com/TomorrowWu/golang-algorithms/blob/master/leetcode/0069.sqrtx/src/sqrtx.go">源码传送门</a></li>
+<li>项目中会提供各种数据结构及算法的Golang实现, LeetCode解题思路及答案</li>
+</ul>
+
+<h6 id="参考资料">参考资料</h6>
+
+<p><a href="https://leetcode-cn.com/problems/sqrtx/description/">leetcode 69. x 的平方根</a></p>
+
+<p><a href="https://time.geekbang.org/column/article/42733">极客时间 数据结构与算法之美</a></p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/archives/">归档</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://lovecoding.club/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+                                
+                                <li><a href="https://lovecoding.club/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a></li>
+                                
+                                <li><a href="https://lovecoding.club/tags/leetcode">leetcode</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+
+<div id="disqus_thread"></div>
+<script id="dsq-count-scr" src="//lovecoding.disqus.com/count.js" async></script>
+<script>
+
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://lovecoding.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    
+
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://lovecoding.club">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://lovecoding.club/2018/11/13/leetcode.69.sqrtx.html" title="leetcode.69.sqrtx.X的平方根">leetcode.69.sqrtx.X的平方根</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">数据结构与算法之美(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://lovecoding.club/tags/leetcode/">leetcode</a>
+    
+    <a href="https://lovecoding.club/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    
+    <a href="https://lovecoding.club/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://lovecoding.club/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2018 <a href="https://lovecoding.club">编程的世界 By 吴名</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="http://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script type="text/javascript">
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>
