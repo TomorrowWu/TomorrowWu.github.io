@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>leetcode.69.sqrtx.X的平方根 | 不破楼兰终不还</title>
-    <meta property="og:title" content="leetcode.69.sqrtx.X的平方根 - 不破楼兰终不还">
+    <title>《程序员练级攻略2018开篇词》总结 | 不破楼兰终不还</title>
+    <meta property="og:title" content="《程序员练级攻略2018开篇词》总结 - 不破楼兰终不还">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-11-13T14:08:09&#43;08:00">
+    <meta property="article:published_time" content="2018-11-15T17:15:09&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2018-11-13T14:08:09&#43;08:00">
+    <meta property="article:modified_time" content="2018-11-15T17:15:09&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,tomorrowwu,java,区块链,Node.js,博客,软件架构,公众号">
-    <meta name="description" content="leetcode.69.sqrtx.X的平方根">
+    <meta name="description" content="《程序员练级攻略2018开篇词》总结">
         
     <meta name="author" content="楼兰">
-    <meta property="og:url" content="https://lovecoding.club/2018/11/13/leetcode.69.sqrtx.html">
+    <meta property="og:url" content="https://lovecoding.club/2018/11/15/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A52018%E5%BC%80%E7%AF%87%E8%AF%8D%E6%80%BB%E7%BB%93.html">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon"　/>
 
@@ -96,16 +96,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">leetcode.69.sqrtx.X的平方根</h1>
+                            <h1 class="post-title">《程序员练级攻略2018开篇词》总结</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2018年11月13日
+                            2018年11月15日
                         </date>
                         
                         <div class="post-meta meta-category">
                             |
                             
-                                <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E">数据结构与算法之美</a>
+                                <a href="https://lovecoding.club/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%8C%87%E5%8D%97">程序员练级指南</a>
                             
                         </div>
                         
@@ -117,95 +117,55 @@
                         <div class="post-content">
                             
 
-<h3 id="题目描述">题目描述</h3>
-
-<p>实现 int sqrt(int x) 函数。</p>
-
-<p>计算并返回 x 的平方根，其中 x 是非负整数。</p>
-
-<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
-
-<p>示例1:</p>
-
-<pre><code>输入: 4
-输出: 2
-</code></pre>
-
-<p>示例2:</p>
-
-<pre><code>输入: 8
-输出: 2
-说明: 8 的平方根是 2.82842..., 
-     由于返回类型是整数，小数部分将被舍去。
-</code></pre>
-
-<h3 id="暴力版本">暴力版本</h3>
-
-<pre><code class="language-Golang">// 暴力解法
-func mySqrt(x int) int {
-	for i := 0; i &lt;= x; i++ {
-		res := i * i
-		if res == x {
-			return i
-		} else if res &gt; x {
-			return i - 1
-		}
-	}
-	return -1
-}
-</code></pre>
-
-<h3 id="二分查找">二分查找</h3>
-
-<pre><code class="language-Golang">//在有序数组中，找到最后一个小于等于给定值的数
-func mySqrt2(x int) int {
-	low, high := 0, x
-	for low &lt;= high {
-		//防止大数相加溢出
-		//位运算更高效
-		mid := low + (high-low)&gt;&gt;1
-		product := mid * mid
-		if product &gt; x {
-			high = mid - 1
-		} else {
-			if (mid == x) || (mid+1)*(mid+1) &gt; x {
-				//遍历最后一个数 || 下一个数大于目标值
-				return mid
-			}
-			//下一个数小于等于目标值，所以mid不是最后一个数
-			low = mid + 1
-		}
-	}
-	return -1
-}
-</code></pre>
-
-<h3 id="二分查找思路">二分查找思路</h3>
+<h4 id="理论和现实的差距">理论和现实的差距</h4>
 
 <ul>
-<li>相当于从0-x中找到最后一个平方&lt;=x的整数</li>
-<li>我们求解的是最后一个小于等于给定值的元素，所以当 product&lt;=x时，需要确认 mid+1 的平方&gt;x</li>
-<li>如果 mid+1 的平方 &lt;= x ,说明mid肯定不是最后一个，更新low</li>
+<li>学院派知识有强大威力,只是你没找到相关场景</li>
+<li>算法与数据结构、操作系统原理、编译原理、数据库原理、计算机原理……这些原理上的东西，是你想要成为一个专家必需要学的东西。这就是“工人”和“工程师”的差别，是“建筑工人”和“建筑架构师”的差别。如果你觉得这些理论上的东西无用，那么只能说明，你只不过在从事工人的工作，而不是工程师的工作。</li>
 </ul>
 
-<h3 id="github">GitHub</h3>
+<h4 id="技术能力的瓶颈">技术能力的瓶颈</h4>
 
 <ul>
-<li><a href="https://github.com/TomorrowWu/golang-algorithms/blob/master/leetcode/0069.sqrtx/src/sqrtx.go">源码传送门</a></li>
-<li>项目中会提供各种数据结构及算法的Golang实现, LeetCode解题思路及答案</li>
+<li>技术的东西都是死的，这些死的知识只要努力就是可以学会的</li>
+<li>只要你的方法得当，多花点时间在基础知识上，会让你未来学习应用知识的时间大大缩短</li>
+<li>以绝大多数人努力的程度，和为自己不努力找借口的程度为参考，只要你坚持正常的学习就可以超过大多数人了</li>
 </ul>
 
-<h6 id="参考资料">参考资料</h6>
+<h4 id="技术无法速成">技术无法速成</h4>
 
-<p><a href="https://leetcode-cn.com/problems/sqrtx/description/">leetcode 69. x 的平方根</a></p>
+<ul>
+<li>一切都是要靠你自己去努力和持续地付出</li>
+<li>成长路径是需要思考、精力和相关的经验的，这都需要时间，而且是不短的时间。你先问问自己有没有花十年磨一剑的决心</li>
+</ul>
 
-<p><a href="https://time.geekbang.org/column/article/42733">极客时间 数据结构与算法之美</a></p>
+<h4 id="学习建议">学习建议</h4>
 
-<blockquote>
-<p>本文为原创文章，转载注明出处，欢迎扫码关注公众号 <code>tomorrowwu</code> 或者网站<a href="https://lovecoding.club">https://lovecoding.club</a>,第一时间看后续精彩文章，觉得好的话，顺手分享到朋友圈吧，感谢支持。</p>
-</blockquote>
+<ul>
+<li>一定要坚持，要保持长时间学习，甚至终生学习的态度</li>
+<li>一定要动手，不管例子多么简单，建议至少自己动手敲一遍看看是否理解了里头的细枝末节</li>
+<li>一定要学会思考，思考为什么要这样，而不是那样。还要举一反三地思考</li>
+<li>不要乱买书，不要乱追新技术新名词，基础的东西经过很长时间积累，会在未来至少 10 年通用</li>
+<li>回顾一下历史，看看历史时间线上技术的发展，你才能明白明天会是什么样的</li>
+</ul>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/5815624-4a8b49cfbaf037dd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200" alt="image" /></p>
+<h4 id="我的观点">我的观点</h4>
+
+<ul>
+<li>为明天做一些技术储备,因为你不知道你所缺的东西,机会只会留给有准备的人,多多阅读,多多交流,最好写下心得强化自己的认识和记忆</li>
+<li>真正的高手在工作之余都会花很多时间去自己研究点东西</li>
+<li>永远和高手一起工作。如果你面试的公司的面试太简单,就不要去,简单的面试意味着平庸,只会让你学习速度变慢,甚至倒退</li>
+<li>很多东西在概念上是想通的,在哲学层次上是相通的,这是你需要去追求的学习知识的境界</li>
+<li>很多时候,你缺少的不是知识,而是热情!</li>
+<li>花2-3年打实基础，坚持学习基础原理，别看他们一开始跑的快，但是没有后劲，这跟长跑和登山一样，后半程随便秒他们</li>
+</ul>
+
+<h4 id="必读文章">必读文章</h4>
+
+<ul>
+<li>传世之文《<a href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a>》（<a href="https://liuyandong.com/2017/10/25/122/">中英对照版</a>）</li>
+<li>Coolshell 作者陈皓《<a href="https://coolshell.cn/articles/4235.html">程序员的荒谬之言还是至理名言？</a>》</li>
+</ul>
 
                         </div>
 
@@ -214,6 +174,10 @@ func mySqrt2(x int) int {
 <div class="post-archive">
     <h2>See Also</h2>
     <ul class="listing">
+        
+        <li><a href="/2018/11/13/leetcode.33.search-in-rotated-sorted-array.html">leetcode 33 搜索旋转排序数组</a></li>
+        
+        <li><a href="/2018/11/13/leetcode.69.sqrtx.html">leetcode.69.sqrtx.X的平方根</a></li>
         
         <li><a href="/archives/">归档</a></li>
         
@@ -225,11 +189,7 @@ func mySqrt2(x int) int {
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="https://lovecoding.club/tags/%E7%AE%97%E6%B3%95">算法</a></li>
-                                
-                                <li><a href="https://lovecoding.club/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a></li>
-                                
-                                <li><a href="https://lovecoding.club/tags/leetcode">leetcode</a></li>
+                                <li><a href="https://lovecoding.club/tags/%E6%94%BB%E7%95%A5">攻略</a></li>
                                 
                             </ul>
                             
