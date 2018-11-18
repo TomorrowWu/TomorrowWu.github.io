@@ -64,6 +64,19 @@ int[] nums = new int[] {1,2,3,3,3}; Solution solution = new Solution(nums); // p
     </item>
     
     <item>
+      <title>leetcode 25. k个一组翻转链表</title>
+      <link>https://lovecoding.club/2018/10/27/leetcode25.-k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
+      <pubDate>Sat, 27 Oct 2018 18:10:33 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2018/10/27/leetcode25.-k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
+      <description>题目描述 给出一个链表，每 k 个节点一组进行翻转，并返回翻转后的链表。
+k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么将最后剩余节点保持原有顺序。
+示例:
+给定这个链表：1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5 当 k = 2 时，应当返回: 2-&amp;gt;1-&amp;gt;4-&amp;gt;3-&amp;gt;5 当 k = 3 时，应当返回: 3-&amp;gt;2-&amp;gt;1-&amp;gt;4-&amp;gt;5  说明: - 你的算法只能使用常数的额外空间。 - 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+解题思路 1. 取链表的前K个节点，如果够K个节点，就截断后进行反转，不够K个节点，说明处理完了，return 2. 反转完前K个节点后，使用递归，处理后面的链表  代码实现 // ListNode Definition for singly-linked list. type ListNode struct { Val int Next *ListNode } func reverseKGroup(head *ListNode, k int) *ListNode { if k &amp;lt; 2 || head == nil || head.Next == nil { return head } tail, needReverse := getTail(head, k) if needReverse { tailNext := tail.</description>
+    </item>
+    
+    <item>
       <title>归档</title>
       <link>https://lovecoding.club/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
