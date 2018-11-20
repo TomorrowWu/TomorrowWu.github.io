@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>左耳听风陈皓-程序员练级攻略2018开篇词-总结 | 不破楼兰终不还</title>
-    <meta property="og:title" content="左耳听风陈皓-程序员练级攻略2018开篇词-总结 - 不破楼兰终不还">
+    <title>乐观锁与悲观锁 | 不破楼兰终不还</title>
+    <meta property="og:title" content="乐观锁与悲观锁 - 不破楼兰终不还">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-11-15T17:15:09&#43;08:00">
+    <meta property="article:published_time" content="2018-11-20T13:56:09&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2018-11-15T17:15:09&#43;08:00">
+    <meta property="article:modified_time" content="2018-11-20T13:56:09&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,tomorrowwu,java,区块链,Node.js,博客,软件架构,公众号">
-    <meta name="description" content="左耳听风陈皓-程序员练级攻略2018开篇词-总结">
+    <meta name="description" content="乐观锁与悲观锁">
         
     <meta name="author" content="楼兰">
-    <meta property="og:url" content="https://lovecoding.club/2018/11/15/%E5%B7%A6%E8%80%B3%E5%90%AC%E9%A3%8E%E9%99%88%E7%9A%93-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A52018%E5%BC%80%E7%AF%87%E8%AF%8D-%E6%80%BB%E7%BB%93.html">
+    <meta property="og:url" content="https://lovecoding.club/2018/11/20/%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.html">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon"　/>
 
@@ -96,16 +96,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">左耳听风陈皓-程序员练级攻略2018开篇词-总结</h1>
+                            <h1 class="post-title">乐观锁与悲观锁</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2018年11月15日
+                            2018年11月20日
                         </date>
                         
                         <div class="post-meta meta-category">
                             |
                             
-                                <a href="https://lovecoding.club/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%8C%87%E5%8D%97">程序员练级指南</a>
+                                <a href="https://lovecoding.club/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>
                             
                         </div>
                         
@@ -117,55 +117,86 @@
                         <div class="post-content">
                             
 
-<h4 id="理论和现实的差距">理论和现实的差距</h4>
+<h3 id="何谓悲观锁与乐观锁">何谓悲观锁与乐观锁</h3>
 
 <ul>
-<li>学院派知识有强大威力,只是你没找到相关场景</li>
-<li>算法与数据结构、操作系统原理、编译原理、数据库原理、计算机原理……这些原理上的东西，是你想要成为一个专家必需要学的东西。这就是“工人”和“工程师”的差别，是“建筑工人”和“建筑架构师”的差别。如果你觉得这些理论上的东西无用，那么只能说明，你只不过在从事工人的工作，而不是工程师的工作。</li>
+<li>乐观锁对应于生活中乐观的人总是想着事情往好的方向发展</li>
+<li>悲观锁对应于生活中悲观的人总是想着事情往坏的方向发展</li>
+<li>这两种人各有优缺点，不能不以场景而定说一种人好于另外一种人。</li>
 </ul>
 
-<h4 id="技术能力的瓶颈">技术能力的瓶颈</h4>
+<h3 id="悲观锁">悲观锁</h3>
 
 <ul>
-<li>技术的东西都是死的，这些死的知识只要努力就是可以学会的</li>
-<li>只要你的方法得当，多花点时间在基础知识上，会让你未来学习应用知识的时间大大缩短</li>
-<li>以绝大多数人努力的程度，和为自己不努力找借口的程度为参考，只要你坚持正常的学习就可以超过大多数人了</li>
+<li>总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会阻塞直到它拿到锁（<strong>共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程</strong>）</li>
+<li>传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁</li>
+<li>Java中synchronized和ReentrantLock等独占锁就是悲观锁思想的实现。</li>
 </ul>
 
-<h4 id="技术无法速成">技术无法速成</h4>
+<h3 id="乐观锁">乐观锁</h3>
 
 <ul>
-<li>一切都是要靠你自己去努力和持续地付出</li>
-<li>成长路径是需要思考、精力和相关的经验的，这都需要时间，而且是不短的时间。你先问问自己有没有花十年磨一剑的决心</li>
+<li>总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据</li>
+<li>使用版本号机制和CAS算法实现</li>
+<li>适用于多读的应用类型，这样可以提高吞吐量</li>
+<li>像数据库提供的类似于write_condition机制，其实都是提供的乐观锁。</li>
+<li>在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的</li>
 </ul>
 
-<h4 id="学习建议">学习建议</h4>
+<h3 id="两种锁的使用场景">两种锁的使用场景</h3>
 
 <ul>
-<li>一定要坚持，要保持长时间学习，甚至终生学习的态度</li>
-<li>一定要动手，不管例子多么简单，建议至少自己动手敲一遍看看是否理解了里头的细枝末节</li>
-<li>一定要学会思考，思考为什么要这样，而不是那样。还要举一反三地思考</li>
-<li>不要乱买书，不要乱追新技术新名词，基础的东西经过很长时间积累，会在未来至少 10 年通用</li>
-<li>回顾一下历史，看看历史时间线上技术的发展，你才能明白明天会是什么样的</li>
+<li>两种锁各有优缺点，不可认为一种好于另一种</li>
+<li><strong>乐观锁适用于写比较少的情况下（多读场景）</strong>，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。但如果是多写的情况，一般会经常产生冲突，这就会导致上层应用会不断的进行retry，这样反倒是降低了性能，所以<strong>一般多写的场景下用悲观锁就比较合适</strong></li>
 </ul>
 
-<h4 id="我的观点">我的观点</h4>
+<h3 id="乐观锁常见的两种实现方式">乐观锁常见的两种实现方式</h3>
+
+<h4 id="1-版本号机制">1. 版本号机制</h4>
+
+<p>一般是在数据表中加上一个数据版本号version字段，表示数据被修改的次数，当数据被修改时，version值会加一。当线程A要更新数据值时，在读取数据的同时也会读取version值，在提交更新时，若刚才读取到的version值为当前数据库中的version值相等时才更新，否则重试更新操作，直到更新成功。</p>
+
+<p><strong>举一个简单的例子：</strong>
+假设数据库中帐户信息表中有一个 version 字段，当前值为 1 ；而当前帐户余额字段（ balance ）为 $100 。</p>
+
+<ol>
+<li>操作员 A 此时将其读出（ version=1 ），并从其帐户余额中扣除 $50（ $100-$50 ）。</li>
+<li>在操作员 A 操作的过程中，操作员B 也读入此用户信息（ version=1 ），并从其帐户余额中扣除 $20 （ $100-$20 ）。</li>
+<li>操作员 A 完成了修改工作，将数据版本号加一（ version=2 ），连同帐户扣除后余额（ balance=$50 ），提交至数据库更新，此时由于提交数据版本大于数据库记录当前版本，数据被更新，数据库记录 version 更新为 2 。</li>
+<li>操作员 B 完成了操作，也将版本号加一（ version=2 ）试图向数据库提交数据（ balance=$80 ），但此时比对数据库记录版本时发现，操作员 B 提交的数据版本号为 2 ，数据库记录当前版本也为 2 ，不满足 “ 提交版本必须大于记录当前版本才能执行更新 “ 的乐观锁策略，因此，操作员 B 的提交被驳回。</li>
+</ol>
+
+<p>这样，就避免了操作员 B 用基于 version=1 的旧数据修改的结果覆盖操作员A 的操作结果的可能。</p>
+
+<h4 id="2-cas算法">2. CAS算法</h4>
+
+<p>即<strong>compare and swap（比较与交换）</strong>，是一种有名的<strong>无锁算法</strong>。无锁编程，即不使用锁的情况下实现多线程之间的变量同步，也就是在没有线程被阻塞的情况下实现变量的同步，所以也叫<strong>非阻塞同步</strong>（Non-blocking Synchronization）。</p>
+
+<p><strong>CAS算法</strong>涉及到三个操作数
+- 需要读写的内存值 V
+- 进行比较的值 A
+- 拟写入的新值 B</p>
+
+<p>当且仅当 V 的值等于 A时，CAS通过原子方式用新值B来更新V的值，否则不会执行任何操作（<strong>比较和替换是一个原子操作</strong>）。一般情况下是一个<strong>自旋操作</strong>，即不断的重试。</p>
+
+<h3 id="乐观锁的缺点">乐观锁的缺点</h3>
+
+<h4 id="1-aba-问题">1. ABA 问题</h4>
 
 <ul>
-<li>为明天做一些技术储备,因为你不知道你所缺的东西,机会只会留给有准备的人,多多阅读,多多交流,最好写下心得强化自己的认识和记忆</li>
-<li>真正的高手在工作之余都会花很多时间去自己研究点东西</li>
-<li>永远和高手一起工作。如果你面试的公司的面试太简单,就不要去,简单的面试意味着平庸,只会让你学习速度变慢,甚至倒退</li>
-<li>很多东西在概念上是想通的,在哲学层次上是相通的,这是你需要去追求的学习知识的境界</li>
-<li>很多时候,你缺少的不是知识,而是热情!</li>
-<li>花2-3年打实基础，坚持学习基础原理，别看他们一开始跑的快，但是没有后劲，这跟长跑和登山一样，后半程随便秒他们</li>
+<li>如果一个变量V初次读取的时候是A值，并且在准备赋值的时候检查到它仍然是A值，那我们就能说明它的值没有被其他线程修改过了吗？</li>
+<li>很明显是不能的，因为在这段时间它的值可能被改为其他值，然后又改回A，那CAS操作就会误认为它从来没有被修改过。这个问题被称为CAS操作的 <strong>&ldquo;ABA&rdquo;问题</strong>。</li>
 </ul>
 
-<h4 id="必读文章">必读文章</h4>
+<p>JDK 1.5 以后的 <code>AtomicStampedReference 类</code>就提供了此种能力，其中的  <code>compareAndSet</code> 方法就是首先检查当前引用是否等于预期引用，并且当前标志是否等于预期标志，如果全部相等，则以原子方式将该引用和该标志的值设置为给定的更新值</p>
 
-<ul>
-<li>传世之文《<a href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a>》（<a href="https://liuyandong.com/2017/10/25/122/">中英对照版</a>）</li>
-<li>Coolshell 作者陈皓《<a href="https://coolshell.cn/articles/4235.html">程序员的荒谬之言还是至理名言？</a>》</li>
-</ul>
+<h4 id="2-循环时间长开销大">2. 循环时间长开销大</h4>
+
+<p><strong>自旋CAS（也就是不成功就一直循环执行直到成功）如果长时间不成功，会给CPU带来非常大的执行开销。</strong></p>
+
+<h4 id="3-只能保证一个共享变量的原子操作">3. 只能保证一个共享变量的原子操作</h4>
+
+<p>CAS 只对单个共享变量有效，当操作涉及跨多个共享变量时 CAS 无效</p>
 
                         </div>
 
@@ -175,13 +206,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/2018/11/16/leetcode.398.%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%B4%A2%E5%BC%95.html">leetcode.398.随机数索引</a></li>
+        
+        <li><a href="/2018/11/15/%E5%B7%A6%E8%80%B3%E5%90%AC%E9%A3%8E%E9%99%88%E7%9A%93-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A52018%E5%BC%80%E7%AF%87%E8%AF%8D-%E6%80%BB%E7%BB%93.html">左耳听风陈皓-程序员练级攻略2018开篇词-总结</a></li>
+        
         <li><a href="/2018/11/13/leetcode.33.search-in-rotated-sorted-array.html">leetcode 33 搜索旋转排序数组</a></li>
         
         <li><a href="/2018/11/13/leetcode.69.sqrtx.html">leetcode.69.sqrtx.X的平方根</a></li>
         
         <li><a href="/2018/10/27/leetcode25.-k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html">leetcode 25. k个一组翻转链表</a></li>
-        
-        <li><a href="/archives/">归档</a></li>
         
     </ul>
 </div>
@@ -191,7 +224,9 @@
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="https://lovecoding.club/tags/%E6%94%BB%E7%95%A5">攻略</a></li>
+                                <li><a href="https://lovecoding.club/tags/%E4%B9%90%E8%A7%82%E9%94%81">乐观锁</a></li>
+                                
+                                <li><a href="https://lovecoding.club/tags/%E6%82%B2%E8%A7%82%E9%94%81">悲观锁</a></li>
                                 
                             </ul>
                             
