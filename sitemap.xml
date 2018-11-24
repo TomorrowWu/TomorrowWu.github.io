@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lovecoding.club/2018/11/24/%E7%A6%81%E7%94%A8cleanmymac-healthmonitor.html</loc>
+    <lastmod>2018-11-24T11:17:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/2018/11/20/%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.html</loc>
     <lastmod>2018-11-20T13:56:09+08:00</lastmod>
   </url>
@@ -38,6 +43,12 @@
   </url>
   
   <url>
+    <loc>https://lovecoding.club/tags/cleanmymac/</loc>
+    <lastmod>2018-11-24T11:17:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/tags/leetcode/</loc>
     <lastmod>2018-11-16T10:50:09+08:00</lastmod>
     <priority>0</priority>
@@ -49,14 +60,20 @@
   </url>
   
   <url>
+    <loc>https://lovecoding.club/categories/mac/</loc>
+    <lastmod>2018-11-24T11:17:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/posts/</loc>
-    <lastmod>2018-11-20T13:56:09+08:00</lastmod>
+    <lastmod>2018-11-24T11:17:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lovecoding.club/tags/</loc>
-    <lastmod>2018-11-16T10:50:09+08:00</lastmod>
+    <lastmod>2018-11-24T11:17:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -67,7 +84,7 @@
   
   <url>
     <loc>https://lovecoding.club/</loc>
-    <lastmod>2018-11-20T13:56:09+08:00</lastmod>
+    <lastmod>2018-11-24T11:17:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   

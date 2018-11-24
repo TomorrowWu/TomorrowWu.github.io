@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cleanmymac on 不破楼兰终不还</title>
+    <link>https://lovecoding.club/tags/cleanmymac/</link>
+    <description>Recent content in Cleanmymac on 不破楼兰终不还</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 24 Nov 2018 11:17:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovecoding.club/tags/cleanmymac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>禁用CleanMyMac HealthMonitor</title>
+      <link>https://lovecoding.club/2018/11/24/%E7%A6%81%E7%94%A8cleanmymac-healthmonitor.html</link>
+      <pubDate>Sat, 24 Nov 2018 11:17:09 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2018/11/24/%E7%A6%81%E7%94%A8cleanmymac-healthmonitor.html</guid>
+      <description> 介绍CleanMyMac 大家都知道,在Windows系统上,有360等软件做垃圾清理和软件卸载,对于大多数Mac用户,相对来说不需要类似软件做清理工作,然而,某些强迫症患者或者码农依然需要清理软件,CleanMyMac就是这么一款Mac平台上最好用的清理软件
+牛皮癣后台服务 完整退出 CleanMyMac X 的程序包括菜单栏启动项后,依然有一个服务HealthMonitor在后台运行着,而且占用大量内存
+即使你在安装目录删除该软件,只要你启动过CleanMyMac,这个服务又会生成,并持续后台运行
+下面笔者介绍如何禁用该服务,还你一片清净
+vim修改启动配置文件 sudo vim /private/var/db/launchd.db/com.apple.launchd/overrides.plist  加入如下代码 包名(com.macpaw.CleanMyMac4.HealthMonitor)随着CleanMyMac版本不同会有改动
+&amp;lt;key&amp;gt;com.macpaw.CleanMyMac4.HealthMonitor&amp;lt;/key&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Disabled&amp;lt;/key&amp;gt; &amp;lt;true/&amp;gt; &amp;lt;/dict&amp;gt;  可以通过CleanMyMac查看包名 参考资料  不愧为精致的流氓软件   本文为原创文章，转载注明出处，欢迎扫码关注公众号 楼兰 或者网站https://lovecoding.club,第一时间看后续精彩文章，觉得好的话，顺手分享到朋友圈吧，感谢支持。
+ </description>
+    </item>
+    
+  </channel>
+</rss>
