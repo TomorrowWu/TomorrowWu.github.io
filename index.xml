@@ -6,10 +6,22 @@
     <description>Recent content on 不破楼兰终不还</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 24 Nov 2018 11:17:09 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 10:02:09 +0800</lastBuildDate>
     
 	<atom:link href="https://lovecoding.club/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>卸载 Mac 自带英文 ABC 输入法</title>
+      <link>https://lovecoding.club/2018/12/01/%E5%8D%B8%E8%BD%BDmac%E8%87%AA%E5%B8%A6%E8%8B%B1%E6%96%87abc%E8%BE%93%E5%85%A5%E6%B3%95.html</link>
+      <pubDate>Sat, 01 Dec 2018 10:02:09 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2018/12/01/%E5%8D%B8%E8%BD%BDmac%E8%87%AA%E5%B8%A6%E8%8B%B1%E6%96%87abc%E8%BE%93%E5%85%A5%E6%B3%95.html</guid>
+      <description> 前言 用 Mac 的童鞋都知道，Mac 自带的中文输入法很坑爹，有木有？词库很垃圾，很多中文词是没有的，写起来很蛋疼，效率很低，绝大多数童鞋会安装最好用的中文输入法&amp;ndash;搜狗输入法（ps:不接受反驳），这样Mac 同时存在搜狗输入法和美国英语 ABC 输入法（ps：自带的 ABC输入法无法卸载），但是搜狗输入法本身就提供了英文输入法（shift 切换中英文），在某些场景下，比如输入框，Mac 的输入法会自动被切换为 ABC 输入法，又得切换回搜狗，很蛋疼有没有？鄙人找了好久，昨晚在知乎上搜到了解决方案，下面就是干
+步骤 一共五个步骤： 1. 备份 ~/Library/Preferences/com.apple.HIToolbox.plist 2. 将当前活跃输入法选为「英文」输入法 3. 终端运行
+plutil -convert xml1 ~/Library/Preferences/com.apple.HIToolbox.plist   用 vim 、 sublime text 或者其他编辑器，打开 com.apple.HIToolbox.plist ，删除掉 AppleEnabledInputSources 键下不需要的输入法 dict 注销账户  可能发生的问题（因人而异，笔者未发生此问题） 文件自动恢复，重新出现 ABC  改完保存了之后 command+i 显示简介，勾选已锁定 系统会不停的产生临时文件，然后合并。但由于源文件被锁定，所以无法恢复到原先的文件状态，于是不断的循环  参考资料  如何去掉 OS X 输入法中自带的美式英文？https://www.zhihu.com/question/21459701   本文为原创文章，转载注明出处，欢迎扫码关注公众号 楼兰 或者网站https://lovecoding.club,第一时间看后续精彩文章，觉得好的话，顺手分享到朋友圈吧，感谢支持。
+ </description>
+    </item>
     
     <item>
       <title>禁用CleanMyMac HealthMonitor</title>
