@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on 不破楼兰终不还</title>
+    <link>https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on 不破楼兰终不还</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 06 Dec 2018 21:24:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL使用总结</title>
+      <link>https://lovecoding.club/2018/12/06/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html</link>
+      <pubDate>Thu, 06 Dec 2018 21:24:09 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2018/12/06/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html</guid>
+      <description>互联网时代，数据库的操作越来越成为整个应用的性能瓶颈。当我们去设计数据库表结构，操作数据库时（尤其是查表时的SQL语句），我们都需要注意性能问题
+经验篇 1. 使用查询缓存 大多数MySQL服务器都开启了查询缓存，当有很多相同的查询被执行了多次的时候，这些查询结果会被放到一个缓存中，这样，后续的相同的查询就不用操作表而直接访问缓存结果了
+某些查询语句会让MySQL不使用缓存。请看下面的示例：
+// 查询缓存不开启 $r = mysql_query(&amp;quot;SELECT username FROM user WHERE signup_date &amp;gt;= CURDATE()&amp;quot;); // 开启查询缓存 $today = date(&amp;quot;Y-m-d&amp;quot;); $r = mysql_query(&amp;quot;SELECT username FROM user WHERE signup_date &amp;gt;= &#39;$today&#39;&amp;quot;);  MySQL对CURDATE()、 NOW() 和 RAND() 等SQL函数都不会开启查询缓存，因为函数的返回是易变的，所以需要使用变量来代替MySQL的函数，从而开启缓存
+2. 使用EXPLAIN分析SELECT查询 使用EXPLAIN关键字可以让你知道MySQL如何处理SQL语句的，例如索引主键被如何利用的，数据表如何被搜索和排序的&amp;hellip;&amp;hellip;等等，帮你分析你的查询语句或是表结构的性能瓶颈。
+3. 当只要一行数据时，使用LIMIT 1 某些场景下，你知道查询只会有一条结果，或者只需要判断是否存在符合条件的结果，在这种情况下，加上LIMIT 1可以增加性能，MySQL数据库引擎会在找到一条数据后停止搜索，而不是继续往后查找下一条符合条件的数据
+4. 千万不要ORDER BY RAND() 当你想打乱返回的数据时，这种方式会让数据库性能呈指数级的下降。这里的问题：MySQL会执行RAND函数（耗CPU），并且是对每一行记录进行，然后再排序
+5. 从 PROCEDURE ANALYSE() 取得建议 PROCEDURE ANALYSE() 会让 MySQL 帮你去分析你的字段和其实际的数据，并会给你一些有用的建议，一定要注意，这只是建议，只有当表的数据越来越多时，建议才会变得准确
+6. 固定长度的表会更快  如果表中所有字段都是“固定长度”的，例如，没有VARCHAR，TEXT，BLOB等类型 固定长度的表会提高性能，很容易计算下一个数据的偏移量，读取也会更快 如果字段不是定长，每次找下一条，需要程序找到主键 固定长度的表更容易被缓存和重建 缺点：固定长度字段会浪费空间，无论用不用，都要分配那么多空间  7.</description>
+    </item>
+    
+  </channel>
+</rss>
