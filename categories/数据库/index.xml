@@ -6,26 +6,59 @@
     <description>Recent content in 数据库 on 不破楼兰终不还</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 06 Dec 2018 21:24:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 09:36:09 +0800</lastBuildDate>
     
 	<atom:link href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>MySQL使用总结</title>
-      <link>https://lovecoding.club/2018/12/06/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html</link>
+      <title>【转载“架构师之路”公众号】58到家MySQL军规升级版（MySQL规范篇）</title>
+      <link>https://lovecoding.club/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html</link>
+      <pubDate>Fri, 07 Dec 2018 09:36:09 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html</guid>
+      <description>一、基础规范  表存储引擎必须使用InnoDB
+ 表字符集默认使用utf8，必要时候使用utf8mb4
+  解读：
+（1）通用，无乱码风险，汉字3字节，英文1字节
+（2）utf8mb4是utf8的超集，有存储4字节例如表情符号时，使用它
+ 禁止使用存储过程，视图，触发器，Event  解读：
+（1）对数据库性能影响较大，互联网业务，能让站点层和服务层干的事情，不要交到数据库层
+（2）调试，排错，迁移都比较困难，扩展性较差
+ 禁止在数据库中存储大文件，例如照片，可以将大文件存储在对象存储系统，数据库中存储路径
+ 禁止在线上环境做数据库压力测试
+ 测试，开发，线上数据库环境必须隔离
+  二、命名规范  库名，表名，列名必须用小写，采用下划线分隔  解读：abc，Abc，ABC都是给自己埋坑
+ 库名，表名，列名必须见名知义，长度不要超过32字符  解读：tmp，wushan谁TM知道这些库是干嘛的
+ 库备份必须以bak为前缀，以日期为后缀
+ 从库必须以-s为后缀
+ 备库必须以-ss为后缀
+  三、表设计规范  单实例表个数必须控制在2000个以内
+ 单表分表个数必须控制在1024个以内
+ 表必须有主键，推荐使用UNSIGNED整数为主键
+  潜在坑：删除无主键的表，如果是row模式的主从架构，从库会挂住
+ 禁止使用外键，如果要保证完整性，应由应用程式实现  解读：外键使得表之间相互耦合，影响update/delete等SQL性能，有可能造成死锁，高并发情况下容易成为数据库瓶颈
+ 建议将大字段，访问频度低的字段拆分到单独的表中存储，分离冷热数据  解读：具体参加《如何实施数据库垂直拆分》
+四、列设计规范  根据业务区分使用tinyint/int/bigint，分别会占用1/4/8字节
+ 根据业务区分使用char/varchar
+  解读：
+（1）字段长度固定，或者长度近似的业务场景，适合使用char，能够减少碎片，查询性能高
+（2）字段长度相差较大，或者更新较少的业务场景，适合使用varchar，能够减少空间</description>
+    </item>
+    
+    <item>
+      <title>MySQL经验篇</title>
+      <link>https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html</link>
       <pubDate>Thu, 06 Dec 2018 21:24:09 +0800</pubDate>
       
-      <guid>https://lovecoding.club/2018/12/06/mysql%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html</guid>
+      <guid>https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html</guid>
       <description>互联网时代，数据库的操作越来越成为整个应用的性能瓶颈。当我们去设计数据库表结构，操作数据库时（尤其是查表时的SQL语句），我们都需要注意性能问题
-经验篇 1. 使用查询缓存 大多数MySQL服务器都开启了查询缓存，当有很多相同的查询被执行了多次的时候，这些查询结果会被放到一个缓存中，这样，后续的相同的查询就不用操作表而直接访问缓存结果了
+SQL语句分类 SQL 语句主要可以划分为以下 3 个类别。 - DDL（Data Definition Languages）语句：数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定义。常用的语句关键字主要包括 create、drop、alter等。 - DML（Data Manipulation Language）语句：数据操纵语句，用于添加、删除、更新和查询数据库记录，并检查数据完整性，常用的语句关键字主要包括 insert、delete、udpate 和select 等。(增添改查） - DCL（Data Control Language）语句：数据控制语句，用于控制不同数据段直接的许可和访问级别的语句。这些语句定义了数据库、表、字段、用户的访问权限和安全级别。主要的语句关键字包括 grant、revoke 等。
+1. 使用查询缓存 大多数MySQL服务器都开启了查询缓存，当有很多相同的查询被执行了多次的时候，这些查询结果会被放到一个缓存中，这样，后续的相同的查询就不用操作表而直接访问缓存结果了
 某些查询语句会让MySQL不使用缓存。请看下面的示例：
 // 查询缓存不开启 $r = mysql_query(&amp;quot;SELECT username FROM user WHERE signup_date &amp;gt;= CURDATE()&amp;quot;); // 开启查询缓存 $today = date(&amp;quot;Y-m-d&amp;quot;); $r = mysql_query(&amp;quot;SELECT username FROM user WHERE signup_date &amp;gt;= &#39;$today&#39;&amp;quot;);  MySQL对CURDATE()、 NOW() 和 RAND() 等SQL函数都不会开启查询缓存，因为函数的返回是易变的，所以需要使用变量来代替MySQL的函数，从而开启缓存
 2. 使用EXPLAIN分析SELECT查询 使用EXPLAIN关键字可以让你知道MySQL如何处理SQL语句的，例如索引主键被如何利用的，数据表如何被搜索和排序的&amp;hellip;&amp;hellip;等等，帮你分析你的查询语句或是表结构的性能瓶颈。
-3. 当只要一行数据时，使用LIMIT 1 某些场景下，你知道查询只会有一条结果，或者只需要判断是否存在符合条件的结果，在这种情况下，加上LIMIT 1可以增加性能，MySQL数据库引擎会在找到一条数据后停止搜索，而不是继续往后查找下一条符合条件的数据
-4. 千万不要ORDER BY RAND() 当你想打乱返回的数据时，这种方式会让数据库性能呈指数级的下降。这里的问题：MySQL会执行RAND函数（耗CPU），并且是对每一行记录进行，然后再排序
-5. 从 PROCEDURE ANALYSE() 取得建议 PROCEDURE ANALYSE() 会让 MySQL 帮你去分析你的字段和其实际的数据，并会给你一些有用的建议，一定要注意，这只是建议，只有当表的数据越来越多时，建议才会变得准确
-6. 固定长度的表会更快  如果表中所有字段都是“固定长度”的，例如，没有VARCHAR，TEXT，BLOB等类型 固定长度的表会提高性能，很容易计算下一个数据的偏移量，读取也会更快 如果字段不是定长，每次找下一条，需要程序找到主键 固定长度的表更容易被缓存和重建 缺点：固定长度字段会浪费空间，无论用不用，都要分配那么多空间  7.</description>
+3. 当只要一行数据时，使用LIMIT 1 某些场景下，你知道查询只会有一条结果，或者只需要判断是否存在符合条件的结果，在这种情况下，加上LIMIT 1可以增加性能，MySQL数据库引擎会在找到一条数据后停止搜索，而不是继续往后查找下一条符合条件的数据</description>
     </item>
     
   </channel>
