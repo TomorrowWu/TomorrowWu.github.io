@@ -7,23 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>数据库 | 不破楼兰终不还</title>
-    <meta property="og:title" content="数据库 - 不破楼兰终不还">
+    <title>分布式 | 不破楼兰终不还</title>
+    <meta property="og:title" content="分布式 - 不破楼兰终不还">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="golang,go语言,tomorrowwu,java,区块链,Node.js,博客,软件架构,公众号">
-    <meta name="description" content="数据库">
+    <meta name="description" content="分布式">
         
     <meta name="author" content="楼兰">
-    <meta property="og:url" content="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <meta property="og:url" content="https://lovecoding.club/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon"　/>
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" title="不破楼兰终不还" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://lovecoding.club/categories/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" title="不破楼兰终不还" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -93,7 +93,7 @@
                     
                     <h3 class="archive-title">
                         分类
-                        <span class="keyword">数据库</span>
+                        <span class="keyword">分布式</span>
                         中的文章
                     </h3>
                     
@@ -102,71 +102,28 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="https://lovecoding.club/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html">【转载“架构师之路”公众号】58到家MySQL军规升级版（MySQL规范篇）</a>
+                                    <a href="https://lovecoding.club/2018/12/08/%E4%B8%80%E8%87%B4%E6%80%A7%E7%AE%97%E6%B3%95-raft.html">一致性算法-Raft</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2018年12月7日
+                                2018年12月8日
                             </date>
                             
                             <div class="post-meta meta-category">
                                 |
                                 
-                                    <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+                                    <a href="https://lovecoding.club/categories/%E5%88%86%E5%B8%83%E5%BC%8F">分布式</a>
                                 
                             </div>
                             
                             <div class="post-content">
-                                <h3 id="一-基础规范">一、基础规范</h3>
+                                <h3 id="raft基础">Raft基础</h3>
 
 <ul>
-<li><p>表存储引擎必须使用InnoDB</p></li>
-
-<li><p>表字符集默认使用utf8，必要时候使用utf8mb4</p></li>
-</ul>
-
-<p>解读：</p>
-
-<p>（1）通用，无乱码风险，汉字3字节，英文1字节</p>
-
-<p>（2）utf8mb4是utf8的超集，有存储4字节例如表情符号时，使用它</p>
-
-<ul>
-<li>禁止使用存储过程，视图，触发器，Event</li>
-</ul>
-
-<p>解读：</p>
-
-<p>（1）对数据库性能影响较大，互联网业务，能让站点层和服 …</p>
-                                <p class="readmore"><a href="https://lovecoding.club/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html">MySQL经验篇</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月6日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <p>互联网时代，数据库的操作越来越成为整个应用的性能瓶颈。当我们去设计数据库表结构，操作数据库时（尤其是查表时的SQL语句），我们都需要注意性能问题</p>
-
-<h4 id="sql语句分类">SQL语句分类</h4>
-
-<p>SQL 语句主要可以划分为以下 3 个类别。
-- DDL（Data Definition Languages）语句：数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定 …</p>
-                                <p class="readmore"><a href="https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html">阅读全文</a></p>
+<li>一个Raft集群包含若干个节点，通常是5个，允许整个系统容忍2个节点的失效。</li>
+<li>任何时刻每一个节点都处于三个状态之一：领导者、跟随者、候选人。通常，系统中只有一个领导人，其它节点都是跟随者。跟随者是被动的：不会发送任何请求，只是简单响应领导者或候选人的请求。领导者处理所有客户端请求。</li>
+<li>Raft把时间分割成任意长度的<strong>任期</strong>，每个节点存储当前任期 …</li></ul>
+                                <p class="readmore"><a href="https://lovecoding.club/2018/12/08/%E4%B8%80%E8%87%B4%E6%80%A7%E7%AE%97%E6%B3%95-raft.html">阅读全文</a></p>
                             </div>
                         </article>
                     
