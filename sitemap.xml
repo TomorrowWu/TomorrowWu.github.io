@@ -58,6 +58,10 @@
   </url>
   
   <url>
+    <loc>https://lovecoding.club/about/</loc>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/categories/</loc>
     <priority>0</priority>
   </url>
