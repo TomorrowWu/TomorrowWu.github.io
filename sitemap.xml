@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lovecoding.club/2018/12/11/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-pos%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E.html</loc>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/2018/12/08/%E4%B8%80%E8%87%B4%E6%80%A7%E7%AE%97%E6%B3%95-raft.html</loc>
     <lastmod>2018-12-08T22:25:09+08:00</lastmod>
   </url>
@@ -97,8 +102,14 @@
   </url>
   
   <url>
+    <loc>https://lovecoding.club/tags/pos/</loc>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/posts/</loc>
-    <lastmod>2018-12-08T22:25:09+08:00</lastmod>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -121,7 +132,7 @@
   
   <url>
     <loc>https://lovecoding.club/</loc>
-    <lastmod>2018-12-08T22:25:09+08:00</lastmod>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,7 +144,7 @@
   
   <url>
     <loc>https://lovecoding.club/tags/%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-12-08T22:25:09+08:00</lastmod>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,6 +157,12 @@
   <url>
     <loc>https://lovecoding.club/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7/</loc>
     <lastmod>2018-12-08T22:25:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lovecoding.club/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -192,6 +209,12 @@
   <url>
     <loc>https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/</loc>
     <lastmod>2018-11-16T10:50:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lovecoding.club/tags/%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E/</loc>
+    <lastmod>2018-12-11T23:44:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
