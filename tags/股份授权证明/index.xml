@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>区块链 on 不破楼兰终不还</title>
-    <link>https://lovecoding.club/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
-    <description>Recent content in 区块链 on 不破楼兰终不还</description>
+    <title>股份授权证明 on 不破楼兰终不还</title>
+    <link>https://lovecoding.club/tags/%E8%82%A1%E4%BB%BD%E6%8E%88%E6%9D%83%E8%AF%81%E6%98%8E/</link>
+    <description>Recent content in 股份授权证明 on 不破楼兰终不还</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 12 Dec 2018 11:21:09 +0800</lastBuildDate>
     
-	<atom:link href="https://lovecoding.club/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lovecoding.club/tags/%E8%82%A1%E4%BB%BD%E6%8E%88%E6%9D%83%E8%AF%81%E6%98%8E/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,24 +18,6 @@
       
       <guid>https://lovecoding.club/2018/12/12/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-%E8%82%A1%E4%BB%BD%E6%8E%88%E6%9D%83%E8%AF%81%E6%98%8E%E6%9C%BA%E5%88%B6dpos.html</guid>
       <description> 原理  Delegated Proof of Stake，叫做股份授权证明机制（又称受托人机制），从某种角度来看，DPoS有点像是议会制度或人民代表大会制度。 如果代表不能履行他们的职责（当轮到他们时，没能生成区块），他们会被除名，网络会选出新的超级节点来取代他们。 DPoS充分利用了持股人的投票，以公平民主的方式达成共识，他们投票选出的N个见证人，可以视为N个矿池，而这N个矿池彼此的权利是完全相等的。 持股人可以随时通过投票更换这些见证人（矿池），只要他们提供的算力不稳定，计算机宕机，或者试图利用手中的权力作恶。  运行机制  所有持币者先选出受托人负责签署区块：选举过程比较类似由股东会选举出董事会（101人代表），代替股东会做出日常营运决策。授权董事会后，决策会更有效率 （相较于PoW每10分钟产生一个区块，DPoS每3秒钟即可产生一个区块。） 与PoW相同，DPoS的规则也是最长链胜出。其中每个受托人必须按照生产排程，轮流产生区块，拿一间工厂作为比方，假设排程排定A、Ｂ、Ｃ分别轮早、中、晚班生产，Ａ在晚上是无法刷门禁卡进入厂房生产的，同样地，C在早班时段也是无法进厂房的。 如果轮到某个超级节点时，他没能生产出区块，他将会从超级节点中除名，网络会选择新的超级节点取代他  对恶意节点的惩罚  注册成为候选受托人需要支付一笔保证金 惩罚机制为：不按排程产生区块的节点将在下一轮被投票剔除，也会被没收之前缴纳的保证金 虽然恶意的节点将在下一轮投票被踢出，但单个恶意区块在短期仍有可能是有效的状态。 短期虽然可能存在恶意区块，但长期下来，可以透过受托人的自主选择来回归链条的有效性  优点  能耗更低 出块时间更快，在交易中可以获得更快的确认速度  缺点  投票需要时间、精力以及技能，绝大部分普通用户是没有投票热情的 对于坏节点的处理存在诸多困难。社区选举不能及时有效的阻止一些破坏节点的出现，给网络造成安全隐患 POW简单来说一种没有门槛的算法，任何人都可以投入算力竞争区块奖励；DPoS延续了PoS的弊端,只有持币者才可以获得区块链奖励，其实这就带来了一种制度性门槛，最终导致DPOS币的流动性大大减少，穷者越穷，富者越富  </description>
-    </item>
-    
-    <item>
-      <title>共识机制-PoS权益证明</title>
-      <link>https://lovecoding.club/2018/12/11/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-pos%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E.html</link>
-      <pubDate>Tue, 11 Dec 2018 23:44:09 +0800</pubDate>
-      
-      <guid>https://lovecoding.club/2018/12/11/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-pos%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E.html</guid>
-      <description>PoS简介 在PoW中，节点之间通过hash的计算力来竞赛以获取下一个区块的记账权
-如果验证者愿意提供更多的令牌作为抵押品，他们就有更大的机会记账下一个区块并获得奖励
-类似于现实生活中的股东机制，拥有股份越多的人越容易获取记账权
-实现原理 常见的有两种：
-1. proofhash &amp;lt; 币龄x目标值 2. proofhash &amp;lt; 币数x目标值  方式1缺点： - 部分节点平时保持离线，只在积累了可观的币龄以后才连线获取利息，然后再次离线
-方式2优点： - 所有节点必须更多的保持在线，以进行权益累积。越多的节点在线进行权益累积，系统遭遇51%攻击的可能性就越低
-PoS潜在攻击方法  账本分叉问题 ( Nothing at Stake Problem )
- 在 PoW 机制中，当账本出现分叉时，对 PoW 这种算力敏感的算法，矿工必须选择一个方向进行挖矿。 而在 PoS 这种算力不敏感的时候，PoS 矿工往往会两个方向都挖，以争取实现利益最大化。当多数矿工都在两条链上一起挖矿的时候，就会很容易出现双重支付攻击。  冷启动问题 ( Initial Distribution Problem )
- PoS 机制中，由于持币量会对挖矿难度产生影响。因此，当一个基于 PoS 体系代币系统启动时，就会面临早期获得代币的持有者，没有动力去花费或者转移代币给第三方。同时，持有越多的币，越容易挖到矿，这样就产生了代币初始流通性问题。 解决方案：早起几个版本，通过 PoW 机制来创建货币，而非 PoS。由于 PoW 本身的性质，矿工在挖矿过程中往往需要资金来升级硬件，所以会让矿工手中的币流通起来  长距离攻击 ( Long-Range Attack )
- PoS 中，产生每个 Block 的速度相对 PoW 快了很多。因此，少数不怀好意的节点会想着把整个区块链共识账本全部重写。这在 PoW 中是经典的 51% 问题，即：当某一个节点控制了 51% 及以上算力，就有能力篡改账本，但达到 51% 算力是件极其困难的事情。而在 PoS 中缺乏对算力的约束，那么就存在潜在可能篡改账本。 解决方案：同步时，限制最大能接受的分叉节点数量。  贿赂攻击（Bribe Attack）</description>
     </item>
     
   </channel>

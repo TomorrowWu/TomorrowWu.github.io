@@ -7,23 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>数据库 | 不破楼兰终不还</title>
-    <meta property="og:title" content="数据库 - 不破楼兰终不还">
+    <title>共识机制-股份授权证明机制DPoS | 不破楼兰终不还</title>
+    <meta property="og:title" content="共识机制-股份授权证明机制DPoS - 不破楼兰终不还">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2018-12-12T11:21:09&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-12-12T11:21:09&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,tomorrowwu,java,区块链,Node.js,博客,软件架构,公众号">
-    <meta name="description" content="数据库">
+    <meta name="description" content="共识机制-股份授权证明机制DPoS">
         
     <meta name="author" content="楼兰">
-    <meta property="og:url" content="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <meta property="og:url" content="https://lovecoding.club/2018/12/12/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-%E8%82%A1%E4%BB%BD%E6%8E%88%E6%9D%83%E8%AF%81%E6%98%8E%E6%9C%BA%E5%88%B6dpos.html">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon"　/>
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+        <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" title="不破楼兰终不还" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -55,7 +60,6 @@
 
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -90,95 +94,130 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        分类
-                        <span class="keyword">数据库</span>
-                        中的文章
-                    </h3>
-                    
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">共识机制-股份授权证明机制DPoS</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年12月12日
+                        </date>
+                        
+                        <div class="post-meta meta-category">
+                            |
+                            
+                                <a href="https://lovecoding.club/categories/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
 
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://lovecoding.club/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html">【转载“架构师之路”公众号】58到家MySQL军规升级版（MySQL规范篇）</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月7日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <h3 id="一-基础规范">一、基础规范</h3>
+<h2 id="原理">原理</h2>
 
 <ul>
-<li><p>表存储引擎必须使用InnoDB</p></li>
-
-<li><p>表字符集默认使用utf8，必要时候使用utf8mb4</p></li>
+<li>Delegated Proof of Stake，叫做股份授权证明机制（又称受托人机制），从某种角度来看，DPoS有点像是议会制度或人民代表大会制度。</li>
+<li>如果代表不能履行他们的职责（当轮到他们时，没能生成区块），他们会被除名，网络会选出新的超级节点来取代他们。</li>
+<li>DPoS充分利用了持股人的投票，以公平民主的方式达成共识，他们投票选出的N个见证人，可以视为N个矿池，而这N个矿池彼此的权利是完全相等的。</li>
+<li>持股人可以随时通过投票更换这些见证人（矿池），只要他们提供的算力不稳定，计算机宕机，或者试图利用手中的权力作恶。</li>
 </ul>
 
-<p>解读：</p>
+<h2 id="运行机制">运行机制</h2>
 
-<p>（1）通用，无乱码风险，汉字3字节，英文1字节</p>
+<ol>
+<li>所有持币者先选出受托人负责签署区块：选举过程比较类似由股东会选举出董事会（101人代表），代替股东会做出日常营运决策。授权董事会后，决策会更有效率 （相较于PoW每10分钟产生一个区块，DPoS每3秒钟即可产生一个区块。）</li>
+<li>与PoW相同，DPoS的规则也是最长链胜出。其中每个受托人必须按照生产排程，轮流产生区块，拿一间工厂作为比方，假设排程排定A、Ｂ、Ｃ分别轮早、中、晚班生产，Ａ在晚上是无法刷门禁卡进入厂房生产的，同样地，C在早班时段也是无法进厂房的。</li>
+<li>如果轮到某个超级节点时，他没能生产出区块，他将会从超级节点中除名，网络会选择新的超级节点取代他</li>
+</ol>
 
-<p>（2）utf8mb4是utf8的超集，有存储4字节例如表情符号时，使用它</p>
+<h2 id="对恶意节点的惩罚">对恶意节点的惩罚</h2>
 
 <ul>
-<li>禁止使用存储过程，视图，触发器，Event</li>
+<li>注册成为候选受托人需要支付一笔保证金</li>
+<li>惩罚机制为：不按排程产生区块的节点将在下一轮被投票剔除，也会被没收之前缴纳的保证金</li>
+<li>虽然恶意的节点将在下一轮投票被踢出，但单个恶意区块在短期仍有可能是有效的状态。</li>
+<li>短期虽然可能存在恶意区块，但长期下来，可以透过受托人的自主选择来回归链条的有效性</li>
 </ul>
 
-<p>解读：</p>
+<h2 id="优点">优点</h2>
 
-<p>（1）对数据库性能影响较大，互联网业务，能让站点层和服 …</p>
-                                <p class="readmore"><a href="https://lovecoding.club/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html">MySQL经验篇</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月6日
-                            </date>
+<ul>
+<li>能耗更低</li>
+<li>出块时间更快，在交易中可以获得更快的确认速度</li>
+</ul>
+
+<h2 id="缺点">缺点</h2>
+
+<ul>
+<li>投票需要时间、精力以及技能，绝大部分普通用户是没有投票热情的</li>
+<li>对于坏节点的处理存在诸多困难。社区选举不能及时有效的阻止一些破坏节点的出现，给网络造成安全隐患</li>
+<li>POW简单来说一种没有门槛的算法，任何人都可以投入算力竞争区块奖励；DPoS延续了PoS的弊端,只有持币者才可以获得区块链奖励，其实这就带来了一种制度性门槛，最终导致DPOS币的流动性大大减少，穷者越穷，富者越富</li>
+</ul>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2018/12/11/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-pos%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E.html">共识机制-PoS权益证明</a></li>
+        
+        <li><a href="/2018/12/08/%E4%B8%80%E8%87%B4%E6%80%A7%E7%AE%97%E6%B3%95-raft.html">一致性算法-Raft</a></li>
+        
+        <li><a href="/2018/12/07/%E8%BD%AC%E8%BD%BD%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF%E5%85%AC%E4%BC%97%E5%8F%B758%E5%88%B0%E5%AE%B6mysql%E5%86%9B%E8%A7%84%E5%8D%87%E7%BA%A7%E7%89%88mysql%E8%A7%84%E8%8C%83%E7%AF%87.html">【转载“架构师之路”公众号】58到家MySQL军规升级版（MySQL规范篇）</a></li>
+        
+        <li><a href="/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html">MySQL经验篇</a></li>
+        
+        <li><a href="/2018/12/01/%E5%8D%B8%E8%BD%BDmac%E8%87%AA%E5%B8%A6%E8%8B%B1%E6%96%87abc%E8%BE%93%E5%85%A5%E6%B3%95.html">卸载 Mac 自带英文 ABC 输入法</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
                             
-                            <div class="post-meta meta-category">
-                                |
+                            <ul class="clearfix">
                                 
-                                    <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+                                <li><a href="https://lovecoding.club/tags/%E8%82%A1%E4%BB%BD%E6%8E%88%E6%9D%83%E8%AF%81%E6%98%8E">股份授权证明</a></li>
                                 
-                            </div>
+                                <li><a href="https://lovecoding.club/tags/dpos">DPOS</a></li>
+                                
+                                <li><a href="https://lovecoding.club/tags/%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95">共识算法</a></li>
+                                
+                            </ul>
                             
-                            <div class="post-content">
-                                <p>互联网时代，数据库的操作越来越成为整个应用的性能瓶颈。当我们去设计数据库表结构，操作数据库时（尤其是查表时的SQL语句），我们都需要注意性能问题</p>
-
-<h4 id="sql语句分类">SQL语句分类</h4>
-
-<p>SQL 语句主要可以划分为以下 3 个类别。
-- DDL（Data Definition Languages）语句：数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定 …</p>
-                                <p class="readmore"><a href="https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html">阅读全文</a></p>
-                            </div>
-                        </article>
+                        </div>
+                    </article>
                     
 
-                    
+<div id="disqus_thread"></div>
+<script id="dsq-count-scr" src="//lovecoding.disqus.com/count.js" async></script>
+<script>
 
 
 
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://lovecoding.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    
 
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -334,13 +373,23 @@
 </footer>
 
 
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script type="text/javascript">
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
 
 
 
