@@ -6,10 +6,24 @@
     <description>Recent content in 数据库 on 不破楼兰终不还</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Dec 2018 09:36:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Dec 2018 20:13:09 +0800</lastBuildDate>
     
 	<atom:link href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Web安全-SQL注入</title>
+      <link>https://lovecoding.club/2018/12/12/web%E5%AE%89%E5%85%A8-sql%E6%B3%A8%E5%85%A5.html</link>
+      <pubDate>Wed, 12 Dec 2018 20:13:09 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2018/12/12/web%E5%AE%89%E5%85%A8-sql%E6%B3%A8%E5%85%A5.html</guid>
+      <description>简介 SQL注入攻击（英语：SQL injection），简称SQL攻击或注入攻击，是发生于应用程序与数据库层的安全漏洞。简而言之，是在输入的字符串之中注入SQL指令，在设计不良的程序当中忽略了字符检查，那么这些注入进去的恶意指令就会被数据库服务器误认为是正常的SQL指令而运行，因此遭到破坏或是入侵。
+什么时候容易发生SQL注入攻击？  使用字符串拼接方式组装SQL指令 使用权限过大的账户连接数据库（比如root账户） 未对用户输入的数据做潜在指令的检查，未限制输入的特殊字符  作用原理  多个SQL命令可串接，以分号字符做分割 SQL命令对于传入的字符串参数是用单引号字符所包起来。（但连续2个单引号字符，在SQL数据库中，则视为字符串中的一个单引号字符） SQL命令中，可以注入注解（连续2个减号字符 &amp;ndash; 后的文字为注解，或“/”与“/”所包起来的文字为注解） 因此，在组合SQL的命令时，未针对单引号字符作跳脱处理的话，将导致该字符变量在填入命令字符串时，被恶意窜改原本的SQL语法的作用  例子 某个网站的登录验证的SQL查询代码为
+strSQL = &amp;quot;SELECT * FROM users WHERE (name = &#39;&amp;quot; + userName + &amp;quot;&#39;) and (pw = &#39;&amp;quot;+ passWord +&amp;quot;&#39;);&amp;quot;  恶意填入
+userName = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;;  与
+passWord = &amp;quot;1&#39; OR &#39;1&#39;=&#39;1&amp;quot;;  时，将导致原本的SQL字符串被填为
+strSQL = &amp;quot;SELECT * FROM users WHERE (name = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;) and (pw = &#39;1&#39; OR &#39;1&#39;=&#39;1&#39;);&amp;quot;  也就是实际上运行的SQL命令会变成下面这样的</description>
+    </item>
     
     <item>
       <title>【转载“架构师之路”公众号】58到家MySQL军规升级版（MySQL规范篇）</title>
