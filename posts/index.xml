@@ -104,8 +104,11 @@ PoS潜在攻击方法  账本分叉问题 ( Nothing at Stake Problem )
       
       <guid>https://lovecoding.club/2018/12/06/mysql%E7%BB%8F%E9%AA%8C%E7%AF%87.html</guid>
       <description>互联网时代，数据库的操作越来越成为整个应用的性能瓶颈。当我们去设计数据库表结构，操作数据库时（尤其是查表时的SQL语句），我们都需要注意性能问题
-SQL语句分类 SQL 语句主要可以划分为以下 3 个类别。 - DDL（Data Definition Languages）语句：数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定义。常用的语句关键字主要包括 create、drop、alter等。 - DML（Data Manipulation Language）语句：数据操纵语句，用于添加、删除、更新和查询数据库记录，并检查数据完整性，常用的语句关键字主要包括 insert、delete、udpate 和select 等。(增添改查） - DCL（Data Control Language）语句：数据控制语句，用于控制不同数据段直接的许可和访问级别的语句。这些语句定义了数据库、表、字段、用户的访问权限和安全级别。主要的语句关键字包括 grant、revoke 等。
-1. 使用查询缓存 大多数MySQL服务器都开启了查询缓存，当有很多相同的查询被执行了多次的时候，这些查询结果会被放到一个缓存中，这样，后续的相同的查询就不用操作表而直接访问缓存结果了
+SQL语句分类 SQL 语句主要可以划分为以下 3 个类别。
+ DDL（Data Definition Languages）语句：数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定义。常用的语句关键字主要包括 create、drop、alter等。
+ DML（Data Manipulation Language）语句：数据操纵语句，用于添加、删除、更新和查询数据库记录，并检查数据完整性，常用的语句关键字主要包括 insert、delete、udpate 和select 等。(增添改查）
+ DCL（Data Control Language）语句：数据控制语句，用于控制不同数据段直接的许可和访问级别的语句。这些语句定义了数据库、表、字段、用户的访问权限和安全级别。主要的语句关键字包括 grant、revoke 等。
+  1. 使用查询缓存 大多数MySQL服务器都开启了查询缓存，当有很多相同的查询被执行了多次的时候，这些查询结果会被放到一个缓存中，这样，后续的相同的查询就不用操作表而直接访问缓存结果了
 某些查询语句会让MySQL不使用缓存。请看下面的示例：
 // 查询缓存不开启 $r = mysql_query(&amp;quot;SELECT username FROM user WHERE signup_date &amp;gt;= CURDATE()&amp;quot;); // 开启查询缓存 $today = date(&amp;quot;Y-m-d&amp;quot;); $r = mysql_query(&amp;quot;SELECT username FROM user WHERE signup_date &amp;gt;= &#39;$today&#39;&amp;quot;);  MySQL对CURDATE()、 NOW() 和 RAND() 等SQL函数都不会开启查询缓存，因为函数的返回是易变的，所以需要使用变量来代替MySQL的函数，从而开启缓存
 2. 使用EXPLAIN分析SELECT查询 使用EXPLAIN关键字可以让你知道MySQL如何处理SQL语句的，例如索引主键被如何利用的，数据表如何被搜索和排序的&amp;hellip;&amp;hellip;等等，帮你分析你的查询语句或是表结构的性能瓶颈。
