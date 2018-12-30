@@ -7,23 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Poll | 不破楼兰终不还</title>
-    <meta property="og:title" content="Poll - 不破楼兰终不还">
+    <title>leetcode 235. 二叉搜索树的最近公共祖先 | 不破楼兰终不还</title>
+    <meta property="og:title" content="leetcode 235. 二叉搜索树的最近公共祖先 - 不破楼兰终不还">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2018-12-30T21:45:09&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-12-30T21:45:09&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,楼兰,java,区块链,Node.js,博客,软件架构,公众号">
-    <meta name="description" content="Poll">
+    <meta name="description" content="leetcode 235. 二叉搜索树的最近公共祖先">
         
     <meta name="author" content="楼兰">
-    <meta property="og:url" content="https://lovecoding.club/tags/poll/">
+    <meta property="og:url" content="https://lovecoding.club/2018/12/30/leetcode-235.-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.html">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon"　/>
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+        <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://lovecoding.club/tags/poll/index.xml" title="不破楼兰终不还" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -55,7 +60,6 @@
 
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -90,60 +94,172 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">poll</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://lovecoding.club/2018/12/17/linux-io%E6%A8%A1%E5%BC%8F%E5%8F%8Aselectpollepoll%E8%AF%A6%E8%A7%A3.html">Linux IO模式及select、poll、epoll详解</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月17日
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">leetcode 235. 二叉搜索树的最近公共祖先</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年12月30日
+                        </date>
+                        
+                        <div class="post-meta meta-category">
+                            |
                             
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://lovecoding.club/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>
-                                
-                            </div>
+                                <a href="https://lovecoding.club/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E">数据结构与算法之美</a>
                             
-                            <div class="post-content">
-                                <h2 id="概念说明">概念说明</h2>
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
 
-<p>在进行解释之前，首先要说明几个概念：
-- 用户空间和内核空间
-- 进程切换
-- 进程的阻塞
-- 文件描述符
-- 缓存 I/O</p>
+<h3 id="题目描述">题目描述</h3>
 
-<h3 id="用户空间与内核空间">用户空间与内核空间</h3>
+<p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先</p>
+
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+
+<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
+
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/binarysearchtree_improved.png" alt="二叉搜索树" /></p>
+
+<p>示例1:</p>
+
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+</code></pre>
+
+<p>示例2:</p>
+
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+</code></pre>
+
+<p>说明:
+  * 所有节点的值都是唯一的
+  * p、q 为不同节点且均存在于给定的二叉搜索树中。</p>
+
+<h3 id="思路">思路</h3>
 
 <ul>
-<li>现在操作系统都是采用虚拟存储器，那么对32位操作系统而言，它的寻址空间（虚拟存储空间）为4G（2的32次方）。</li>
-<li>操作系统的核心是内核，独立于普通的应用程序，可以访问受保护的内存空间，也有访问底层硬 …</li></ul>
-                                <p class="readmore"><a href="https://lovecoding.club/2018/12/17/linux-io%E6%A8%A1%E5%BC%8F%E5%8F%8Aselectpollepoll%E8%AF%A6%E8%A7%A3.html">阅读全文</a></p>
-                            </div>
-                        </article>
+<li>两个不同节点，在树中存在4种状态，1：都在root的左子树中 2，都在root的右子树中 3，分别在root的左右子树中 4，其中一个节点为root节点</li>
+<li>如果属于情况3，那么 root.val &gt; p.val, root.val &lt; q.val,所以乘积&lt;0 ,情况4，乘积==0</li>
+<li>情况1：root.val &gt; p.val</li>
+<li>情况2： root.val &lt; p.val</li>
+</ul>
+
+<h3 id="代码实现">代码实现</h3>
+
+<pre><code>// TreeNode Definition for TreeNode.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	//4种情况：
+	if (root.Val-p.Val)*(root.Val-q.Val) &lt;= 0 {
+		// 1. p,q分别在root的左右两边，那么 乘积小于0
+		//2. p或者q中一方==root，另一方为root的子节点（孙节点。。。）
+		return root
+	} else if root.Val &gt; p.Val {
+		//3. p，q都在root的左子树中
+		return lowestCommonAncestor(root.Left, p, q)
+	} else {
+		//4. p，q都在root的右子树中
+		return lowestCommonAncestor(root.Right, p, q)
+	}
+
+}
+</code></pre>
+
+<h3 id="参考资料">参考资料</h3>
+
+<ul>
+<li><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">leetcode 235. 二叉搜索树的最近公共祖先</a></li>
+</ul>
+
+<h3 id="github">GitHub</h3>
+
+<ul>
+<li><a href="https://github.com/TomorrowWu/golang-algorithms/blob/master/leetcode/0235.lowest-common-ancestor-of-a-binary-search-tree/src/lowest-common-ancestor-of-a-binary-search-tree.go">源码传送门</a></li>
+<li>各种数据结构及算法实现, LeetCode解题思路及答案</li>
+<li><a href="https://github.com/TomorrowWu/interview">大厂面试题汇总及答案解析</a></li>
+</ul>
+
+<blockquote>
+<p>本文为原创文章，转载注明出处，欢迎扫码关注公众号 <code>楼兰</code> 或者网站<a href="https://lovecoding.club">https://lovecoding.club</a>,第一时间看后续精彩文章，觉得好的话，顺手分享到朋友圈吧，感谢支持。</p>
+</blockquote>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5815624-4a8b49cfbaf037dd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200" alt="image" /></p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2018/12/15/leetcode105.-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91.html">LeetCode105. 从前序与中序遍历序列构造二叉树</a></li>
+        
+        <li><a href="/2018/11/16/leetcode.398.%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%B4%A2%E5%BC%95.html">leetcode.398.随机数索引</a></li>
+        
+        <li><a href="/2018/11/13/leetcode.33.search-in-rotated-sorted-array.html">leetcode 33 搜索旋转排序数组</a></li>
+        
+        <li><a href="/2018/11/13/leetcode.69.sqrtx.html">leetcode.69.sqrtx.X的平方根</a></li>
+        
+        <li><a href="/2018/10/27/leetcode25.-k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html">leetcode 25. k个一组翻转链表</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://lovecoding.club/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+                                
+                                <li><a href="https://lovecoding.club/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a></li>
+                                
+                                <li><a href="https://lovecoding.club/tags/leetcode">LeetCode</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
                     
 
-                    
+<div id="disqus_thread"></div>
+<script id="dsq-count-scr" src="//lovecoding.disqus.com/count.js" async></script>
+<script>
 
 
 
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://lovecoding.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    
 
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -321,13 +437,23 @@
 </footer>
 
 
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script type="text/javascript">
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
 
 
 
