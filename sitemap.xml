@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lovecoding.club/2019/1/11/vim%E9%AB%98%E6%95%88%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2.html</loc>
+    <lastmod>2019-01-11T10:40:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/2018/12/30/leetcode-236.-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.html</loc>
     <lastmod>2018-12-30T22:05:09+08:00</lastmod>
   </url>
@@ -175,7 +180,7 @@
   
   <url>
     <loc>https://lovecoding.club/posts/</loc>
-    <lastmod>2018-12-30T22:05:09+08:00</lastmod>
+    <lastmod>2019-01-11T10:40:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -209,6 +214,12 @@
   </url>
   
   <url>
+    <loc>https://lovecoding.club/tags/vim/</loc>
+    <lastmod>2019-01-11T10:40:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lovecoding.club/tags/web%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2018-12-12T20:13:09+08:00</lastmod>
     <priority>0</priority>
@@ -216,7 +227,7 @@
   
   <url>
     <loc>https://lovecoding.club/</loc>
-    <lastmod>2018-12-30T22:05:09+08:00</lastmod>
+    <lastmod>2019-01-11T10:40:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -252,7 +263,7 @@
   
   <url>
     <loc>https://lovecoding.club/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2018-12-01T10:02:09+08:00</lastmod>
+    <lastmod>2019-01-11T10:40:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
