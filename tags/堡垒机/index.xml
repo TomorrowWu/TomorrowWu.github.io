@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>堡垒机 on 不破楼兰终不还</title>
+    <link>https://lovecoding.club/tags/%E5%A0%A1%E5%9E%92%E6%9C%BA/</link>
+    <description>Recent content in 堡垒机 on 不破楼兰终不还</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Jan 2019 11:53:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://lovecoding.club/tags/%E5%A0%A1%E5%9E%92%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iTerm2结合 expect 脚本实现 ssh 登录跳板机后登录指定服务器</title>
+      <link>https://lovecoding.club/2019/1/15/iterm2%E7%BB%93%E5%90%88-expect-%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0-ssh-%E7%99%BB%E5%BD%95%E8%B7%B3%E6%9D%BF%E6%9C%BA%E5%90%8E%E7%99%BB%E5%BD%95%E6%8C%87%E5%AE%9A%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+      <pubDate>Tue, 15 Jan 2019 11:53:09 +0800</pubDate>
+      
+      <guid>https://lovecoding.club/2019/1/15/iterm2%E7%BB%93%E5%90%88-expect-%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0-ssh-%E7%99%BB%E5%BD%95%E8%B7%B3%E6%9D%BF%E6%9C%BA%E5%90%8E%E7%99%BB%E5%BD%95%E6%8C%87%E5%AE%9A%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
+      <description>痛点 一般情况下,公司所有的服务器都在内网，公网访问、管理服务器都要先通过登录一台跳板机，然后再由跳板机登录到相应的服务器进行操作，跳板机与服务器的连接都是内网地址
+通常情况下,我们都是通过两次ssh,第一次本地机器登录跳板机,第二次在跳板机登录指定机器,需要输入两次密码,容易输错
+后端码农每天要无数次登录各种机器,如果能通过工具自动化,每次能省半分钟,并且心情会愉悦很多,下面来进行实战
+expect 脚本 #!/usr/bin/expect set host [lindex $argv 0] # 设置一个变量,传入的参数，0 表示第一个参数,同时也为了复用,毕竟不只是管理一台服务器 set TERMSERV 跳板机IP set USER 跳板机用户名 set PASSWORD 跳板机密码 set UATUN 内网服务器用户名 set UATPWD 内网服务器密码 # 登录跳板机 spawn ssh -l $USER $TERMSERV # expect是expect环境的一个内部命令,判断上一个指令输入之后的得到输出结果是否包含&amp;quot;&amp;quot;双引号里的字符串，比如后面的&amp;quot;*password:*&amp;quot;，表示上一个输出结果包含password:*通配符表示前后可以是任意字符 #类似于编程中的 switch语句,exp_continue相当于 continue expect { &amp;quot;yes/no&amp;quot; {send &amp;quot;yes\r&amp;quot;;exp_continue;} &amp;quot;*password:*&amp;quot; { send &amp;quot;$PASSWORD\r&amp;quot; } } # 登录内网 expect &amp;quot;*$USER@*&amp;quot; {send &amp;quot;ssh -l $UATUN $host\r&amp;quot;} expect { &amp;quot;yes/no&amp;quot; {send &amp;quot;yes\r&amp;quot;;exp_continue;} &amp;quot;*password:*&amp;quot; { send &amp;quot;$UATPWD\r&amp;quot; } } interact # 执行完成后保持交互状态，把控制权交给控制台   将脚本保存成一个文件,例如 server.</description>
+    </item>
+    
+  </channel>
+</rss>
